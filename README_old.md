@@ -78,13 +78,13 @@ python scripts/alphafold3_runner.py batch examples/subtilisin/variants
 ```shell
 cd tool-mcps/alphafold3_mcp
 mamba activate ./env
-fastmcp run src/alphafold3_mcp.py:mcp --transport http --port 8001 --python ./env/bin/python 
+fastmcp run src/server.py:mcp --transport http --port 8001 --python ./env/bin/python 
 ```
 
 ### Install MCP server
 ```shell
-fastmcp install claude-code tool-mcps/alphafold3_mcp/src/alphafold3_mcp.py --python tool-mcps/alphafold3_mcp/env/bin/python
-fastmcp install gemini-cli tool-mcps/alphafold3_mcp/src/alphafold3_mcp.py --python tool-mcps/alphafold3_mcp/env/bin/python
+fastmcp install claude-code tool-mcps/alphafold3_mcp/src/server.py --python tool-mcps/alphafold3_mcp/env/bin/python
+fastmcp install gemini-cli tool-mcps/alphafold3_mcp/src/server.py --python tool-mcps/alphafold3_mcp/env/bin/python
 ```
 ### Call MCP service
 1. Basic end to end structure prediction give sequences
