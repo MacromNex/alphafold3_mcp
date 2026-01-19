@@ -50,14 +50,28 @@ The AlphaFold3 MCP provides seamless integration between AI assistants (Claude C
 
 ## Installation
 
+### Quick Setup (Recommended)
+
+Run the automated setup script:
+
+```bash
+cd alphafold3_mcp
+bash quick_setup.sh
+```
+
+The script will create the conda environment, install all dependencies, and display the Claude Code configuration. See `quick_setup.sh --help` for options like `--skip-env` or `--skip-repo`.
+
+**Note:** AlphaFold3 requires a license from Google DeepMind for model weights and significant disk space for databases (~2TB).
+
 ### Prerequisites
 - Conda or Mamba (mamba recommended for faster installation)
 - Python 3.11+
 - 8GB+ RAM (16GB+ recommended for larger proteins)
 - GPU support optional but recommended for production use
 
-### Create Environment
-Please strictly follow the information in `reports/step3_environment.md` for the complete setup procedure. An example workflow is shown below.
+### Manual Installation (Alternative)
+
+If you prefer manual installation or need to customize the setup, follow `reports/step3_environment.md`:
 
 ```bash
 # Navigate to the MCP directory
