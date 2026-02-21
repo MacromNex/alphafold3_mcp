@@ -30,7 +30,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir --ignore-installed fastmcp loguru
 
 # Clone and install AlphaFold3
-RUN git clone https://github.com/charlesxu90/alphafold3.git repo/alphafold3 && \
+RUN mkdir -p repo && \
+    for attempt in 1 2 3; do \
+      echo "Clone attempt $attempt/3"; \
+      git clone --depth 1 https://github.com/charlesxu90/alphafold3.git repo/alphafold3 && break; \
+      if [ $attempt -lt 3 ]; then sleep 5; fi; \
+    done && \
     cd repo/alphafold3 && pip install --no-deps --no-cache-dir . && \
     build_data
 
