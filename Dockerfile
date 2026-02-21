@@ -53,7 +53,9 @@ ENV PATH="/hmmer/bin:/venv/bin:$PATH"
 
 WORKDIR /app
 COPY src/ ./src/
+RUN chmod -R a+r /app/src/
 COPY configs/ ./configs/
+RUN chmod -R a+r /app/configs/
 RUN mkdir -p tmp/inputs tmp/outputs output
 
 ENV PYTHONPATH=/app
