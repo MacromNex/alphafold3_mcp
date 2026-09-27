@@ -1,5 +1,5 @@
 example/
-data/
+/data/
 results/
 __pycache__/
 *.swp
@@ -14,10 +14,9 @@ claude_outputs/
 env/
 reports/
 templates/
-tests/
 .gemini/
 repo/
-jobs/
+/jobs/
 output/
 test_output/
 examples/
